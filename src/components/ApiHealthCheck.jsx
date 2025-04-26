@@ -7,7 +7,7 @@ export default function ApiHealthWidget() {
   useEffect(() => {
 
     const checkApiHealth = async () => {
-      let response = await fetch("http://localhost:3001/health");
+      let response = await fetch("http://localhost:3000/health");
       let data = await response.json();
 
       console.log(data);

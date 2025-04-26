@@ -1,5 +1,5 @@
 import { handlers } from "./handlers";
-import { setUpServer } from "msw/node";
+import { setupServer } from "msw/node";
 
-export const server = setUpServer(...handlers);
+export const server = setupServer(...handlers);
 
