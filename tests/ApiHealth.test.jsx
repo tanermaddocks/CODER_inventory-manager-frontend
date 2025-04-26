@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
 import ApiHealthWidget from "../src/components/ApiHealthCheck.jsx";
-import { test, expect, vi, afterEach, afterAll } from "vitest";
+import { test, expect, vi, beforeAll, afterEach, afterAll } from "vitest";
 
 // MSW interceptor server!
 import { server } from "../mocks/node.js";
@@ -24,9 +24,7 @@ afterAll(() => {
 
 
 test("Health check widget sees the API health route", async () => {
-	let renderResult = render(<ApiHealthWidget />);
-
-	
+	render(<ApiHealthWidget />);
 
 	vi.waitFor(() => {
 		let healthCheckTextElement = screen.getByText("OK");
